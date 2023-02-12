@@ -1,5 +1,5 @@
 {
-  "name": "curso-cript",
+  "name": "seguranca-nodejs",
   "version": "1.0.0",
   "description": "Criar uma api node com autenticação jwt e validações ACL",
   "main": "index.js",

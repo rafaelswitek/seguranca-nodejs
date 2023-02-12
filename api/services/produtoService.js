@@ -1,5 +1,5 @@
-const { v4: uuidv4 } = require('uuid');
-const database = require('../models');
+const { v4: uuidv4 } = require('uuid')
+const database = require('../models')
 
 class ProdutoService {
     async cadastrarProduto(dto) {
@@ -29,7 +29,7 @@ class ProdutoService {
     }
 
     async buscarTodosProdutos() {
-        const produtos = await database.produtos.findAll();
+        const produtos = await database.produtos.findAll()
 
         return produtos;
     }
@@ -42,7 +42,7 @@ class ProdutoService {
         });
 
         if (!produto) {
-            throw new Error('Produto informado não cadastrado!');
+            throw new Error('Produto informado não cadastrado!')
         }
 
         return produto;
@@ -56,7 +56,7 @@ class ProdutoService {
         });
 
         if (!produto) {
-            throw new Error('Produto informado não cadastrado!');
+            throw new Error('Produto informado não cadastrado!')
         }
 
         try {
@@ -66,7 +66,7 @@ class ProdutoService {
                 }
             });
         } catch (error) {
-            console.error('Message error: ', error.message);
+            console.error('Message error: ', error.message)
             throw error;
         }
     }
@@ -79,22 +79,22 @@ class ProdutoService {
         });
 
         if (!produto) {
-            throw new Error('Produto informado não cadastrado!');
+            throw new Error('Produto informado não cadastrado!')
         }
 
         try {
-            produto.nome = dto.nome,
-            produto.descricao = dto.descricao;
-            produto.preco = dto.preco;
+            produto.nome = dto.nome
+            produto.descricao = dto.descricao
+            produto.preco = dto.preco
 
-            await produto.save();
+            await produto.save()
 
-            return await produto.reload();
+            return await produto.reload()
         } catch (error) {
-            console.error('Message error: ', error.message);
-            throw error;
+            console.error('Message error: ', error.message)
+            throw error
         }
     }
 }
 
-module.exports = ProdutoService;
+module.exports = ProdutoService
