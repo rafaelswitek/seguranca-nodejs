@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Criar uma api node com autenticação jwt e validações ACL",
   "main": "index.js",
-  "nodeVersion": "16.16.0",
+  "nodeVersion": "18.15.0",
   "scripts": {
     "start": "nodemon ./api/index.js"
   },
