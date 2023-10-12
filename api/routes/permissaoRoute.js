@@ -1,7 +1,10 @@
 const { Router } = require('express')
 const PermissaoController = require('../controllers/permissaoController')
+const autenticado = require('../middleware/autenticado')
 
 const router = Router()
+
+router.use(autenticado)
 
 router
     .post('/permissao', PermissaoController.cadastrarPermissao)

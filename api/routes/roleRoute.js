@@ -1,7 +1,10 @@
 const { Router } = require('express')
 const RoleController = require('../controllers/roleController')
+const autenticado = require('../middleware/autenticado')
 
 const router = Router()
+
+router.use(autenticado)
 
 router
     .post('/role', RoleController.cadastrarRole)
